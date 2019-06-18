@@ -19,6 +19,7 @@ public class AccountDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private long accountId;
 	private String accountHolderName;
+	private long accountNumber;
 	private double closingBalance;
 	private String ifscCode;
 	private String bankname;

@@ -29,6 +29,7 @@ public class Account implements Serializable {/**
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long accountId;
 	private String accountHolderName;
+	private long accountNumber;
 	private double closingBalance;
 	private String ifscCode;
 	private String bankname;
