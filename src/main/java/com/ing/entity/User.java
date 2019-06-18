@@ -29,8 +29,7 @@ public class User implements Serializable{
 	private Long userId;
 	private String username;
 	private String password;	
-	private int status;
-	private boolean flag;
+	private boolean status  =true;
 	@OneToOne(mappedBy = "user")
 	private Account account;
 	@JsonManagedReference
