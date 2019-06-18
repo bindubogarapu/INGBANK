@@ -1,6 +1,9 @@
 package com.ing.dto;
 
 import java.io.Serializable;
+import java.util.List;
+
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +18,10 @@ public class UserDTO implements Serializable {
 	private String username;
 	private String password;
 	private boolean isActive;
+	
+	private AccountDTO account;
+	
+	private List<BeneficiaryDTO> beneficiaries;
+	private List<TransactionDTO> transactions;
 
 }
