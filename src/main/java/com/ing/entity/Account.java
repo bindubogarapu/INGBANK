@@ -33,6 +33,7 @@ public class Account implements Serializable {/**
 	private String ifscCode;
 	private String bankname;
 	private String branchName;
+	private long accountNumber;
 
 	@OneToOne
 	@JoinColumn(name="userId")

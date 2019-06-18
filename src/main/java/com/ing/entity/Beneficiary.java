@@ -40,10 +40,13 @@ public class Beneficiary implements Serializable{
 	private double balance;
 	private String branchName;
 	private Date creationDate;
+	private Account account;
 	
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private User user;
 
+	
+	
 }
