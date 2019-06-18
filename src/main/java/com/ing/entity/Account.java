@@ -21,7 +21,9 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Account implements Serializable {
+public class Account implements Serializable {/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -31,6 +33,7 @@ public class Account implements Serializable {
 	private String ifscCode;
 	private String bankname;
 	private String branchName;
+	private long accountNumber;
 
 	@OneToOne
 	@JoinColumn(name="userId")

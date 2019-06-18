@@ -29,14 +29,14 @@ public class User implements Serializable{
 	private Long userId;
 	private String username;
 	private String password;	
-	private boolean status  =true;
+	private String status;
 	@OneToOne(mappedBy = "user")
 	private Account account;
 	@JsonManagedReference
-	@OneToMany
+	@OneToMany(mappedBy = "user")
 	private List<Beneficiary> beneficiaries;
 	
 	@JsonManagedReference
-	@OneToMany
+	@OneToMany(mappedBy = "user")
 	private List<Transaction> transactions;
 }
