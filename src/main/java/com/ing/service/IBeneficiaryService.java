@@ -1,9 +1,12 @@
 package com.ing.service;
 
+import java.util.List;
+
 import com.ing.dto.BeneficiaryDTO;
 
 public interface IBeneficiaryService {
 
-	BeneficiaryDTO addBeneficiary(BeneficiaryDTO beneficiaryDTO);
+	public BeneficiaryDTO addBeneficiary(BeneficiaryDTO beneficiaryDTO);
+	public List<BeneficiaryDTO> getAllBeneficiaryByUserId(String userId);
 
 }

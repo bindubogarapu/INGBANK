@@ -27,7 +27,7 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userId;
-	private String username;
+	private String userName;
 	private String password;	
 	private String status;
 	@OneToOne(mappedBy = "user")

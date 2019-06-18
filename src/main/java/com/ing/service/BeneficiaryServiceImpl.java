@@ -1,5 +1,7 @@
 package com.ing.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -28,7 +30,7 @@ public class BeneficiaryServiceImpl implements IBeneficiaryService {
 	public BeneficiaryDTO addBeneficiary(BeneficiaryDTO beneficiaryDTO) {
 
 		Beneficiary beneficiary = new Beneficiary();
-		Optional<User> user = userRepo.findById(beneficiaryDTO.getUserDTO().getId());
+		Optional<User> user = userRepo.findById(beneficiaryDTO.getUserDTO().getUserId());
 		
 		Account account = accountRepo.findByAccountNumber(beneficiaryDTO.getAccountNumber());
 		BeanUtils.copyProperties(beneficiaryDTO, beneficiary);
@@ -38,6 +40,29 @@ public class BeneficiaryServiceImpl implements IBeneficiaryService {
 		BeanUtils.copyProperties(beneficiary, beneficiaryDTO);
 
 		return beneficiaryDTO;
+	}
+	
+	public List<BeneficiaryDTO> getAllBeneficiaryByUserId(String userId) {
+		// TODO Auto-generated method stub
+		List<Long> userIdList =  new ArrayList<Long>();
+		userIdList.add(Long.parseLong(userId));
+		User user = new User();
+		user.setUserId(Long.parseLong(userId));
+		List<Beneficiary>benefiaryList =  beneficiaryRepository.getAllBeneficiaryByUser(user);
+		List<BeneficiaryDTO> beneficiaryDTOs = new ArrayList<BeneficiaryDTO>();
+		for (Beneficiary beneficiery :benefiaryList) {
+			BeneficiaryDTO beneficiaryDTO1 = new BeneficiaryDTO();
+			beneficiaryDTO1.setAccountNumber(beneficiery.getAccountNumber());
+			beneficiaryDTO1.setBeneficiaryName(beneficiery.getBeneficiaryName());
+			beneficiaryDTO1.setBalance(beneficiery.getBalance());
+			beneficiaryDTO1.setBankName(beneficiery.getBankName());
+			beneficiaryDTO1.setBranchName(beneficiery.getBranchName());
+			beneficiaryDTO1.setIfscCode(beneficiery.getIfscCode());
+			beneficiaryDTOs.add(beneficiaryDTO1);
+			
+		}
+	
+		return beneficiaryDTOs;
 	}
 
 }

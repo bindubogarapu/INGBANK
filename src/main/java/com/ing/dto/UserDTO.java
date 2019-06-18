@@ -14,8 +14,8 @@ import lombok.ToString;
 public class UserDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1343084553422854072L;
-	private Long id;
-	private String username;
+	private Long userId;
+	private String userName;
 	private String password;
 	private String status;
 	
