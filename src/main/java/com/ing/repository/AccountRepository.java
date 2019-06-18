@@ -8,6 +8,6 @@ import com.ing.entity.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account,Long>{
 	
-	//public Account findByAccountNumber(long accountNumber);
+	public Account findByAccountNumber(long accountNumber);
 
 }
