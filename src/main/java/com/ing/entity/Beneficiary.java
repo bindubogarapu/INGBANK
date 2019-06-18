@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -40,6 +41,8 @@ public class Beneficiary implements Serializable{
 	private double balance;
 	private String branchName;
 	private Date creationDate;
+	@OneToOne
+	@JoinColumn(name="accountId")
 	private Account account;
 	
 	@JsonBackReference
