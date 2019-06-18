@@ -20,6 +20,7 @@ public class BeneficiaryController {
 	@Autowired
 	IBeneficiaryService beneficiaryService;
 	
+	
 	@PostMapping("/account/beneficary")
 	public ResponseEntity<BeneficiaryDTO> addBeneficiary(@RequestBody BeneficiaryDTO beneficiaryDTO ){	
 		BeneficiaryDTO beneficiaryDto = beneficiaryService.addBeneficiary(beneficiaryDTO);

@@ -29,6 +29,7 @@ public class BeneficiaryServiceImpl implements IBeneficiaryService {
 
 		Beneficiary beneficiary = new Beneficiary();
 		Optional<User> user = userRepo.findById(beneficiaryDTO.getUserDTO().getId());
+		
 		Account account = accountRepo.findByAccountNumber(beneficiaryDTO.getAccountNumber());
 		BeanUtils.copyProperties(beneficiaryDTO, beneficiary);
 		beneficiary.setUser(user.get());
