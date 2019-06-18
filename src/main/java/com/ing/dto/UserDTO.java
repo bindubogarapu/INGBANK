@@ -21,7 +21,6 @@ public class UserDTO implements Serializable {
 	
 	private AccountDTO account;
 	
-	private List<BeneficiaryDTO> beneficiaries;
-	private List<TransactionDTO> transactions;
+	
 
 }

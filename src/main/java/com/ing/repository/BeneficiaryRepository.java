@@ -1,5 +1,9 @@
 package com.ing.repository;
 
-public interface BeneficiaryRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ing.entity.Beneficiary;
+
+public interface BeneficiaryRepository extends JpaRepository<Beneficiary, Long> {
 
 }
