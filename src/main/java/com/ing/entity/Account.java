@@ -21,15 +21,12 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Account implements Serializable {/**
-	 * 
-	 */
+public class Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long accountId;
 	private String accountHolderName;
-	private long accountNumber;
 	private double closingBalance;
 	private String ifscCode;
 	private String bankname;
